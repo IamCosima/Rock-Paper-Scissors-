@@ -14,3 +14,10 @@ function getComputerChoice() {
      return move  
 }
 console.log(getComputerChoice())
+
+function getHumanChoice() {
+    choice = prompt("rock, paper, scissors. Shoot!")
+    return choice
+    
+}
+console.log(getHumanChoice())
