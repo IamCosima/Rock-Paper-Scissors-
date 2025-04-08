@@ -31,41 +31,101 @@ function getComputerChoice() {
     //console.log("Human:" + humanChoice)
     //console.log("Computer:" + computerChoice)
     humanChoice = humanChoice.toLowerCase();
-    if (humanChoice === 'rock' && computerChoice === 'scissors') {
+
+    if (humanScore < 5 || computerScore < 5){
+      if (humanChoice === 'rock' && computerChoice === 'scissors') {
         humanScore += 1;
         let text = "Human: " + humanScore + " " + "Computer :" + computerScore;
         document.getElementById("score").textContent = text;
         document.getElementById("round").textContent = "You Win! Rock beats Scissors"
-    }
-    else if (humanChoice === 'scissors' && computerChoice === 'paper'){
+
+        if(humanScore === 5 || computerScore === 5){
+          if (humanScore > computerScore) {
+            document.getElementById("score").textContent = "Human Wins with " + humanScore
+            humanScore = 0
+            computerScore = 0
+          }
+          else{
+            document.getElementById("score").textContent ="Computer Wins with " + computerScore
+            humanScore = 0
+            computerScore = 0
+          }
+        }
+      }
+      else if (humanChoice === 'scissors' && computerChoice === 'paper'){
         humanScore += 1;
         let text = "Human: " + humanScore + " " + "Computer :" + computerScore;
         document.getElementById("score").textContent = text;
         document.getElementById("round").textContent ="You Win! Scissors beats Paper";
 
-    }
-    else if (humanChoice === 'paper' && computerChoice === 'rock'){
+        if(humanScore === 5 || computerScore === 5){
+          if (humanScore > computerScore) {
+            document.getElementById("score").textContent = "Human Wins with " + humanScore
+            humanScore = 0
+            computerScore = 0
+          }
+          else{
+            document.getElementById("score").textContent ="Computer Wins with " + computerScore
+            humanScore = 0
+            computerScore = 0
+          }
+        }
+      }
+      else if (humanChoice === 'paper' && computerChoice === 'rock'){
         humanScore += 1;
         let text = "Human: " + humanScore + " " + "Computer :" + computerScore;
         document.getElementById("score").textContent = text;
         document.getElementById("round").textContent ="You Win! Paper beats Rock";
-    }
-    else if (humanChoice === computerChoice){
+
+        if(humanScore === 5 || computerScore === 5){
+          if (humanScore > computerScore) {
+            document.getElementById("score").textContent = "Human Wins with " + humanScore
+            humanScore = 0
+            computerScore = 0
+          }
+          else{
+            document.getElementById("score").textContent ="Computer Wins with " + computerScore
+            humanScore = 0
+            computerScore = 0
+          }
+        }
+      }
+      else if (humanChoice === computerChoice){
       let text = "Human: " + humanScore + " " + "Computer :" + computerScore;
       document.getElementById("score").textContent = text;
       document.getElementById("round").textContent ="You Tie! " + computerChoice + ' draws ' + humanChoice;
-    }
 
-    else {
+      if(humanScore === 5 || computerScore === 5){
+        if (humanScore > computerScore) {
+          document.getElementById("score").textContent = "Human Wins with " + humanScore
+          humanScore = 0
+            computerScore = 0
+        }
+        else{
+          document.getElementById("score").textContent ="Computer Wins with " + computerScore
+          humanScore = 0
+          computerScore = 0
+        }
+      }
+      }
+      else {
         computerScore += 1;
         let text = "Human: " + humanScore + " " + "Computer :" + computerScore;
         document.getElementById("score").textContent = text;
         document.getElementById("round").textContent ="You Loose! " + computerChoice + ' beats ' + humanChoice;
-    }
+
+        if(humanScore === 5 || computerScore === 5){
+          if (humanScore > computerScore) {
+            document.getElementById("score").textContent = "Human Wins with " + humanScore
+            humanScore = 0
+            computerScore = 0
+          }
+          else{
+            document.getElementById("score").textContent ="Computer Wins with " + computerScore
+            humanScore = 0
+            computerScore = 0
+          }
+        }
+      }
   }
-  if (humanScore > computerScore) {
-    console.log("Human Wins with " + humanScore)
-  }
-  else{
-    console.log("Computer Wins with " + computerScore)
-  }
+} 
